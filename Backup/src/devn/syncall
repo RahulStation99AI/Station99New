@@ -1,0 +1,46 @@
+cd ./Station99_ios
+git checkout master
+git pull
+# git checkout dev/dev-rahuls
+git pull
+#git merge master
+
+git checkout master
+cd ../andriod
+git checkout master
+git pull
+# git checkout dev/dev-rahuls
+#git merge master
+git checkout master
+cd ../android
+git checkout master
+git pull
+# git checkout dev/dev-rahuls
+git pull
+# git merge master
+git checkout master
+cd ../ios
+git checkout master
+git pull
+# git checkout dev/dev-rahuls
+git pull
+# git merge master
+git checkout master
+cd ../station99
+git checkout master
+git pull
+# git checkout dev/dev-rahuls
+git pull
+# git merge master
+git checkout master
+cd ../webapp
+git checkout master
+git pull
+# git checkout dev/dev-rahuls
+git pull
+# git merge master
+git pull
+cd ..
+git checkout master
+git pull
+

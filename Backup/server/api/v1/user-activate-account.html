@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Validate User Account</title>
+<script type="text/javascript">
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var authToken = url.searchParams.get("auth-token");
+    var elapsed = url.searchParams.get("elapsed");
+    var station_id = url.searchParams.get("station");
+    
+    const data = {
+        authToken: authToken,
+        elapsed: elapsed,
+        station_id: station_id
+    }
+    
+    const fullPath = window.location.origin + '/api/v1/website/validateUser';
+        fetch(fullPath, {
+            method: 'POST', // or 'PUT'
+            headers: {
+              'Content-Type': 'application/json', 
+              'db_name':'universal'
+            },
+            body: JSON.stringify(data)
+        }).then(res => res.json())
+            .then((data) => {
+                if(data.response){
+					
+                  document.getElementById("formHide").style.display = "block";
+                  document.getElementById("alertHide").style.display = "none";
+                }else{
+                  document.getElementById("formHide").style.display = "none";
+                  document.getElementById("alertHide").style.display = "block";
+                }
+                //var response = data.response; 
+                
+                
+            })
+            .catch(console.log)
+
+
+    function Validate() {
+      
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        
+        const data = {
+            authToken: authToken,
+            elapsed: elapsed,
+            station_id: station_id,
+            userPassword: password
+        }
+        
+		const fullPath = window.location.origin + '/api/v1/website/updateUserPassword';
+        
+		fetch(fullPath, {
+            method: 'POST', // or 'PUT'
+            headers: {
+              'Content-Type': 'application/json', 
+              'db_name':'universal'
+            },
+            body: JSON.stringify(data)
+        }).then(res => res.json())
+            .then((data) => {
+                if(data.response){
+				alert('Thank You! Password has been updated!');
+                  document.getElementById("formHide").style.display = "block";
+                  document.getElementById("alertHide").style.display = "none";
+                }else{
+                  document.getElementById("formHide").style.display = "none";
+                  document.getElementById("alertHide").style.display = "block";
+                }
+                //var response = data.response; 
+            })
+            .catch(console.log)
+
+    }
+
+</script>
+<style>
+    input[type=password], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type=button] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=button]:hover {
+      background-color: #45a049;
+    }
+    
+   .box {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      width: 25%;
+    }
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+  </style>
+    
+</head>
+<body>
+<center>
+  <div>
+    <div class="box" id="alertHide" style="display: none;">
+      <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Sorry!</strong> This Session has been Expired.
+      </div>
+    </div>
+    <div class="box" id="formHide" style="display: none;"> 
+        <h1>Activate Your Account</h1>
+        <form action="#">
+            <label for="fname" style="text-align: left;">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Your Password..">
+        
+            <label for="lname" style="text-align: left;">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter your Confirm Password..">
+        
+            <input type="button" value="Submit" onclick="Validate()">
+          </form>
+    </div>
+  </div>
+  </center>
+</body>
+</html> 

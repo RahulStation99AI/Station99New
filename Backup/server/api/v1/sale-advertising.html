@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sales & Advertising</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script type="text/javascript">
+var url_string = window.location.href;
+var url = new URL(url_string);
+//var radio_station_id = url.searchParams.get("radioStationId");
+var dbName = url.searchParams.get("db_name");
+var fileColor = url.searchParams.get("f");
+    $(function(){	
+        var domaiURL = '/api/v1/website/getSaleAdvertising';		    
+            $.ajax({
+                type: 'GET',
+                headers: {
+                //    'Authorization': 'Basic ' + btoa('myuser:mypswd'),
+                    'db_name': dbName
+                },
+               dataType: "json",
+                contentType: 'application/json',
+                url: domaiURL,						
+                success: function(data) {
+                    
+                    $('#responseData').html(data.response.sale_advertising_data);
+
+                    if(typeof fileColor === 'undefined' || fileColor == 'b') {
+                        var newColor = "#000000";
+                        var oldColor = "#ffffff";
+                        $("*").css("color", function(i, val) {
+                            val = val.replace(/\s/g, "");
+                            if (val == oldColor || val == hexToRgb(oldColor)) {
+                                return newColor;
+                            }
+                            else {
+                                return val;
+                            }
+                        });
+                    }
+
+                }
+            });				
+    });
+
+    function hexToRgb(hex) {
+        var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+        hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+            return r + r + g + g + b + b;
+        });
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? "rgb(" + parseInt(result[1], 16) + "," + parseInt(result[2], 16) + "," + parseInt(result[3], 16) + ")" : null;
+    }
+</script>
+</head>
+<body>
+    <div id="responseData" style="padding: 60px;text-align: justify;font-size: 19px;">
+
+    </div>
+</body>
+</html> 

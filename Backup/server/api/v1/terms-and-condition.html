@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Terms of Use</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script type="text/javascript">
+var url_string = window.location.href;
+var url = new URL(url_string);
+//var radio_station_id = url.searchParams.get("radioStationId");
+var dbName = url.searchParams.get("db_name");
+
+    $(function(){	
+        var domaiURL = '/api/v1/website/getTermsCondition';
+        //alert(radio_station_id);			    
+            $.ajax({
+                type: 'GET',
+                headers: {
+                //    'Authorization': 'Basic ' + btoa('myuser:mypswd'),
+                    'db_name': dbName
+                },
+               // data: {'radio_station_id':radio_station_id},
+               dataType: "json",
+                contentType: 'application/json',
+                url: domaiURL,						
+                success: function(data) {
+                    
+                    $('#responseData').html(data.response.terms_data);
+                }
+            });				
+    });
+</script>
+</head>
+<body>
+<div id="responseData" style="padding: 60px;text-align: justify;font-size: 19px;">
+
+</div>
+</body>
+</html> 

@@ -1,0 +1,121 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Contact Us</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+<script src="https://use.fontawesome.com/01169ed6c7.js"></script>
+
+
+<script type="text/javascript">
+
+var url_string = window.location.href;
+var url = new URL(url_string);
+//var radio_station_id = url.searchParams.get("radioStationId");
+var dbName = url.searchParams.get("db_name");
+var fileColor = url.searchParams.get("f");
+    $(function(){	
+        $('#whatsapp').hide();
+        if(dbName == "connect_fm"){
+            $('#whatsapp').show();
+        }else{
+            $('#whatsapp').hide();
+        }
+        var domaiURL = '/api/v1/website/getContactUs';		    
+            $.ajax({
+                type: 'GET',
+                headers: {
+                //    'Authorization': 'Basic ' + btoa('myuser:mypswd'),
+                    'db_name': dbName
+                },
+               dataType: "json",
+                contentType: 'application/json',
+                url: domaiURL,						
+                success: function(data) {
+                    
+                    $('#responseData').html(data.response.contact_us_data);
+
+                    if(typeof fileColor === 'undefined' || fileColor == 'b') {
+                        var newColor = "#000000";
+                        var oldColor = "#ffffff";
+                        $("*").css("color", function(i, val) {
+                            val = val.replace(/\s/g, "");
+                            if (val == oldColor || val == hexToRgb(oldColor)) {
+                                return newColor;
+                            }
+                            else {
+                                return val;
+                            }
+                        });
+                    }
+
+                }
+            });				
+    });
+
+    function hexToRgb(hex) {
+        var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+        hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+            return r + r + g + g + b + b;
+        });
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? "rgb(" + parseInt(result[1], 16) + "," + parseInt(result[2], 16) + "," + parseInt(result[3], 16) + ")" : null;
+    }
+</script>
+<style>
+    .button {
+        display: inline-block;
+        border-radius: 50px;
+        background-color: #FEBD6B;
+        border: none;
+        color: #000;
+        text-align: center;
+        font-size: 35px;
+        padding: 15px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        text-decoration: none;
+        width: 85%;
+    }
+    
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+    
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+    
+    .button:hover span {
+      padding-right: 25px;
+    }
+    
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+    </style>
+</head>
+<body>
+<div id="responseData" style="padding: 60px;text-align: justify;font-size: 19px;">
+
+</div>
+<!--<div id="whatsapp">
+    <center>
+        <p style="color: #ffffff;font-size: 22px;"><b>We love to hear from our listeners, so feel free to send us message.</b></p>
+        <a href="https://wa.me/+16048070915" class="button" style="vertical-align:middle"><i style="color:#62de1d;font-size: 38px;" class="fa fa-whatsapp" aria-hidden="true"></i> <span>MESSAGE US ON WHATSAPP </span></a>
+    <center>
+
+</div>-->
+</body>
+
+</html>

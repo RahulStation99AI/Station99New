@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Station99_ios" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/andriod-new/Station99_andriod" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ios" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/kxa_android" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/kxa_ios" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/station99" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/webapp" vcs="Git" />
+  </component>
+</project>

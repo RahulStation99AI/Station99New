@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Contact Us</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script type="text/javascript">
+var url_string = window.location.href;
+var url = new URL(url_string);
+var radio_station_id = url.searchParams.get("radioStationId");
+//console.log(radio_station_id);
+var host = window.location.host;
+//alert(host);
+
+    $(function(){	
+        var domaiURL = '/api/v1/specialAdList';
+        //alert(radio_station_id);			    
+            $.ajax({
+                type: 'GET',
+                data: {'radio_station_id':radio_station_id},
+                contentType: 'application/json',
+                url: domaiURL,						
+                success: function(data) {
+                    console.log('success');
+                    console.log(JSON.stringify(data));
+                }
+            });				
+    });
+</script>
+</head>
+<body>
+<div id="responseData">
+<h1>Contact Us</h1>
+	<p >2707 Colby Avenue, Suite 1380<br/>Everett, WA 98201<br/>Office: 425-304-1381<br/>Website: <a href="http://www.everettpost.com/kxa-classic-country-music" target="_blank">www.classiccountrykxa.com</a><br/>E-mail: <a href="mailto: info@krko.com">info@krko.com</a></p>
+    <h1>About Us</h1>
+    <p>
+        Our 3 media platforms include two Radio Stations; Everett’s Greatest Hits KRKO, Classic Country KXA and <a href="http://www.everettpost.com/" target="_blank">www.EverettPost.com</a> KRKO broadcasts live on AM1380, FM95.3, streaming online @ <a href="http://www.everettpost.com/everett-radio-krko" target="_blank">www.krko.com</a> and KXA broadcasts live on AM1520, FM101.1 and online @ <a href="http://www.everettpost.com/kxa-classic-country-music" target="_blank">www.classiccountrykxa.com</a>.
+    </p>
+	<p>We are the best way to reach adults living and working throughout Snohomish, Skagit, Island and N. King Counties.</p>
+    
+   
+
+</div>
+</body>
+</html> 

@@ -1,0 +1,5 @@
+cp -r ../../connectfm connectfm_ios
+cp -r ../../connectfm_andriod connectfn_andriod
+cp -r ../../krko_new krko_new
+cp -r ../../old old
+

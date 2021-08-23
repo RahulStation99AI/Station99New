@@ -1,0 +1,377 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Privacy Policy</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script type="text/javascript">
+var url_string = window.location.href;
+var url = new URL(url_string);
+var radio_station_id = url.searchParams.get("radioStationId");
+//console.log(radio_station_id);
+var host = window.location.host;
+//alert(host);
+
+    $(function(){	
+        var domaiURL = '/api/v2/specialAdList';
+        //alert(radio_station_id);			    
+            $.ajax({
+                type: 'GET',
+                data: {'radio_station_id':radio_station_id},
+                contentType: 'application/json',
+                url: domaiURL,						
+                success: function(data) {
+                    console.log('success');
+                    console.log(JSON.stringify(data));
+                }
+            });				
+    });
+</script>
+</head>
+<body>
+<div id="responseData">
+    <h1 style="text-align:center;">Privacy Policy</h1>
+    <strong>Last Updated: 9/9/2019</strong>
+    <p>
+       This App is managed, operated and supported by Station 99 L.L.C. (“Station 99”, “We” or “Us”). This Privacy Policy contains information regarding how Station 99 collects and uses personal information. To make this Privacy Policy easier to read, the App, and other products and services are collectively called the “Services.”
+    </p>
+    <p>
+       We only collect a very limited amount of personal information to deliver its services. To the extent we docollect any information we will not share your personally identifiable information with anyone, except as specified in this Privacy Policyfor purposes of delivering these Services to you. Please note that Personal Information generally includes, but is not limited to, a person’s name, address, email address, phone number, and any other information that is able to identify an individual.
+    </p>
+    <h3>
+        Overview
+    </h3>
+    <p>
+        We operate on a few fundamental principles:
+    </p>
+    <ol type="1" start="1">
+        <li>
+            We don’t and won’t ask you for personally identifying information unless we truly need it.
+        </li>
+        <li>
+           We don’t share your personallyidentifying information with anyone, except as needed,to provide service or product support, to comply with the law, or to protect our rights.
+        </li>
+        <li>
+            We may share information that is not identifiable and in the aggregate for the purposes offering improved services to our users. 
+        </li>
+        <li>
+            We don’t store personal or customer information on our servers unless required for the on-going operation of our Services. We remove most user data not required for operations within forty-four days and all otherinformation that is no longer required for the operation of our services will be removed after eighteen months. 
+        </li>
+    </ol>
+    <p>
+        This Privacy Policy does not apply to the privacy practices of third parties whose links may appear on or through the Services. We are not responsible for the content or privacy practices of third parties or other users. The collection, storage, and use of personally identifying information by these third parties is governed by any terms and/or privacy policies of those third parties.
+    </p>
+    <p>
+        We recommend that you exercise caution before you voluntarily disclose personally identifiable information to other users, on publicly accessible or displayable parts of the Service, or through third-party links on third-party websites or Apps.
+    </p>
+    <p>
+        
+If you have questions about deleting or correcting your personal data please contact our support team at <a href="mailto:support@station99ai.com">support@station99ai.com</a>
+    </p>
+    <h3>
+        Service Providers, Third Party Applications, and Business Partners.
+    </h3>
+        <p>
+            We use certain third-party companies to help us provide, analyze and improve our services (this includes but is not limited to data storage, maintenance services, payment processing, web analytics, email communications and management). The third parties we select to use may have access to your information only for the purpose of supporting our services and have similar expectations with caring for privacy information. As of the date of this policy we utilize the following third party tools: Google analytics, Amazon AWS
+    </p>
+    <p>
+        Third party applications (i.e. Facebook, LinkedIn, etc.) are accessible through our App or maybe used to login into the App, however, this privacy policy does not apply to the privacy practices of other applications whose links may appear on or through the services. We are not responsible for the content or privacy practices of these third parties and we recommend you check their policies before using them.  
+    </p>
+    <p>
+       We may partner with other companies and if we do, we will require our partners to sign data processing agreements where each partner agrees to protect your personal information.   
+    </p>
+    <h3>
+        Collection and Use of Information
+    </h3>
+    <p>
+        Your use of the Services may result in certain Personal Information collected or used by us or third parties we employ to assist in delivering services.  
+    </p>
+    <p>
+       For transparency: 
+    </p>
+    <p>
+        We may <b>use</b> the information (whether or not deemed Personal or not) collected for several purposes, including but not limited to:
+    </p>
+    <ul>
+        <li>
+            Communicate with you;
+        </li>
+        <li>Make song and programming recommendations;</li>
+        <li>Target relevant ads you may be interested in; </li>
+        <li>Ensure legal and contractual compliance;</li>
+        <li>Respond to customer service requests;</li>
+        <li>Perform analytics concerning your use of the Services;
+        </li>
+        <li>Perform analytics concerning your use of the Services;</li>
+        <li>Improve the Services; and</li>
+        <li>Carry out any other lawful purpose as may be disclosed to you at any time.</li>
+    </ul>
+   
+    
+    <p>
+        We may <strong>share</strong> non-identifiable information in the aggregate
+        with:
+    </p>
+    <ul type="disc">
+        <li>
+            Non-affiliated companies for our everyday business purposes; and
+        </li>
+        <li>
+            Other parties (i.e. Radio Station, advertisers) in the form of aggregated and de-identified data, which will never be used to target an individual data. The information cannot reasonably be used to identify you except in a limited circumstance where you participate in a contest or promotion and approve the information to be shared with the purveyor of the contest or promotion. 
+        </li>
+    </ul>
+    <p>
+        <strong>
+           By using the Services you consent to our collection and use of information as specified below: 
+        </strong>
+        <strong></strong>
+    </p>
+    <p>
+        a) <strong>Registration Information.</strong>
+    </p>
+    <p>
+        In order to utilize some of the Services you will need to set up an “Account” with us, we require certain identifying information that will be linked to your account, including your:
+    </p>
+    <ul>
+        <li>
+            Name, and
+        </li>
+        <li>
+           Email Address. 
+        </li>
+    </ul>
+    <p>
+        We encourage you to exercise caution before voluntarily disclosing other types of Personal Informationabout yourself and prohibit you from disclosing any Personal Information about another person, whether another account holder or not.	
+    </p>
+    <p>
+        b) <strong>Use Analytics</strong>
+    </p>
+    <p>
+        The Services automatically collects certain types of technical information, such as:
+    </p>
+    <ul>
+        <li>
+            Browser or Device Type,
+        </li>
+        <li>
+            Device ID 
+        </li>
+        <li>
+            Gender
+        </li>
+        <li>
+            Zipcode
+        </li>
+        <li>
+            County
+        </li>
+        <li>
+            Language Preference,
+        </li>
+        <li>
+            Referring Site,
+        </li>
+        <li>
+            Operating System,
+        </li>
+        <li>
+            Page Views, and
+        </li>
+        <li>
+            Date and Time of Visit.
+        </li>
+    </ul>
+    <p>
+        We use this information to better understand how our visitors use the Services, and to maintain and improve Services.
+    </p>
+    <p>
+        We use Google Analytics to help us understand how our Users use the site. For more information about your PERSONAL INFORMATION and Google, please visit <a href="www.google.com/intl/en/policies/privacy">www.google.com/intl/en/policies/privacy</a>.
+    </p>
+    <p>
+        c) <strong>Location Information &amp; IP Addresses or Device ID </strong>
+    </p>
+    <p>
+        Internet Protocol (“IP”) addresses or Device ID indicate the location of your computer or mobile device on a network connected to the Internet. Using the Services may result in the logging of IP addresses for systems administration, troubleshooting purposes, and to prevent prohibited account sharing. While this may be used to infer an approximation of your location when using certain features of the Services, we do not log IP addresses to track your location. If you are an account holder, we may link IP addresses to Personal Information in order to monitor account sharing and prevent prohibited activity. 
+    </p>
+    <p>
+        d) <strong>Data Aggregation  </strong>
+    </p>
+    <p>
+        In addition to the other uses described in this Policy, you agree that we may extract and use information from the information you disclose for the purposes of aggregating data in a non-identifiable method. This aggregated data may be used to improve Services or without limitation, to develop, analyze, combine, or publish the aggregated data for commercial purposes. 
+    </p>
+    <p>
+        e) <strong>Cookies</strong>
+    </p>
+    <p>
+        Your use of the Services may result in the assignment and storage of session cookies to recognize your access privileges. A cookie is a text file that is placed on the hard disk of your computer or mobile device by a server. Session cookies expire when you end your session and close your browser interface. Cookies cannot be used to run programs or deliver viruses to your computer or mobile device. Cookies are uniquely assigned to you and can only be read by a server in the domain that issued the cookie to you.We use cookies to help us identify and track visitors, their usage of and preferences on our website. Visitors who do not wish to have cookies placed on their computers or mobile devices should set their browsers to “Refuse Cookies” before using our Services, with the drawback that certain features of our Services may not function properly without the aid of cookies.
+    </p>
+    <p>
+        The third-party providers we use may also place a cookie or similar file on your computer: (i) to customize your experience; (ii) to collect technical and navigational information; or (iii) for security purposes.
+    </p>
+    <p>
+        f) <strong>Behavioral Advertising; Marketing</strong>
+    </p>
+    <p>
+        We may use your Personal Information to provide you with targeted advertisements or marketing communications. Our marketing communications contain information about unsubscribing from such communications. 
+    </p>
+    <p>
+        For more information about how targeted advertising works, you can visit the Network Advertising Initiative’s website at
+        <a href="www.networkadvertising.org/understanding-online-advertising/how-does-it-work" target="_blank">
+            www.networkadvertising.org/understanding-online-advertising/how-does-it-work
+        </a>.
+    </p>
+    <p>
+        You can opt out of targeted advertising by visiting:
+    </p>
+    <p>
+        Facebook at <a href="www.facebook.com/settings/?tab=ads" target="_blank">www.facebook.com/settings/?tab=ads</a>,
+    </p>
+    <p>
+        Google at <a href="www.gogle.com/settings/ads/anonymous" target="_blank">www.gogle.com/settings/ads/anonymous</a>, or
+    </p>
+    <p>
+    Digital Advertising Alliance’s online portal at    <a href="www.optout.aboutads.info" target="_blank">www.optout.aboutads.info</a>.
+    </p>
+    <h3>Protection of Certain Personally Identifying Information</h3>
+    
+    <p>
+       We take all measures reasonably necessary to protect against the unauthorized access, use, alteration, or destruction of potentially personally identifying information. We disclose potential personally identifying information only on an as needed (or required) basis as follows:
+    </p>
+    <ol type="1" start="1">
+        <li>
+		To Our employees that: (i) need to know that information in order to process it on our behalf or to provide the Services; and (ii) that have expressly agreed not to disclose it to others. Note* Some of those employees, and contractors may be located outside of your home country; by using the Services you consent to the transfer of such information to them. 
+        </li>
+        <li>
+            As required by law such to comply with a subpoena or similar legal process. To the extent we are legally permitted to do so, we will take commercially reasonable steps to notify you in the event that we are required to provide your personal information to third parties as part of a legal process. 
+        </li>
+        <li>
+            When we believe in good faith that disclosure is necessary to protect our rights, protect your safety or the safety of others, investigate fraud, or respond to a written government request
+        </li>
+        <li>
+            If We become involved in a merger, acquisition, or any form of sale of some or all of its assets. In the event of a merger, acquisition, or any form of sale of some or all of Our assets, we will ensure that the acquiring organization agrees to protect personal information in accordance with the commitments we have made in this Privacy Notice, and that the acquiring organization will provide notice before personal information, customer information, or business information becomes subject to a different privacy notice.
+        </li>
+        <li>
+            To any other third party with your prior consent to do so. We do not sell your personal information to third parties. 
+        </li>
+    </ol>
+    
+    <h3>
+        Contests and Promotions
+    </h3>
+    <p>
+       If you participate in one of the hosted Contests or Promotions, you agree that a limited amount of your personal information namely name, and email will be shared with the host of the Contest or Promotion for the limited purposes of determining eligibility and notifying you if you are the award winner. Each contest or promotion may include terms that are in addition to these terms so please be sure to review them prior to participating in a contest or promotion. 
+    </p>
+  
+    <h3>
+        Feedback&amp; Support
+    </h3>
+    <p>
+       If you send us a request (via a support email or one of our feedback channels), we reserve the right to publish it (stripped of all personally identifying information, of course) in order to help us clarify or respond to your request or to help us support other users (i.e. create an FAQ database). 
+    </p>
+    <p>
+       We may provide technical support to service your Account(s) with us. In order to do so, we may use certain personally identifying information, with your consent, to access your account for the purpose of troubleshooting, running tests, and/or otherwise providing support. In providing technical support to you, we may potentially see other personally identifying information viewable on your Account pages. As with all other information, we promise to hold any information we encounter in the process of providing support to the highest possible security and protection standards. 
+    </p>
+    <h3>
+        Accessing and Updating your Personal Information
+    </h3>
+    <p>
+        To review, access, or update your personal information to review its accuracy, or request removal please contact us.
+    </p>
+    <p>
+        We will make commercially reasonable efforts to provide you with reasonable access to any of your personal or other account information we maintain within forty-five (45) days of your request. We provide this access so you can review, make corrections, or request deletion of your information. If we cannot honor your request within the 45-day period, we will tell you when we will be able to provide access. In the unlikely event that we cannot provide you access to your information, we will explain why we cannot do so.
+    </p>
+    <p>
+        Please note that any changes you make will be reflected in our active user database within a reasonable time, however we may retain information you submit for backups, archiving, prevention of fraud, to satisfy legal obligations, or otherwise we reasonably believe there is a legitimate reason to do so. 
+    </p>
+    <p>
+        Please note that any changes you make will be reflected in our active user database within a reasonable time, however we may retain information you submit for backups, archiving, prevention of fraud, to satisfy legal obligations, or otherwise we reasonably believe there is a legitimate reason to do so. 
+
+You can opt out of receiving marketing communication we send you at any time. You can exercise this by clicking on the “unsubscribe” link in the emails we send you or by contacting <a href="mailto:support@station99ai.com">support@station99ai.com</a>
+    </p>
+    <h3>
+        Additional information for International Users
+    </h3>
+    <p>
+        If you are visiting this website and/or accessing the Services from outside the United States, please be aware that you are sending information (including Personal Information) to the United States where Our servers are located. This information may be transferred within the United States or back out of the United States to other countries outside of your country of residence, depending on the type of information and how its stored by us. These countries (including the United States) may not necessarily have data protection laws as comprehensive or protective as those in your country of residence, however, our collection, storage and use of your Personal Information will at all times be governed by this Privacy Policy. 
+    </p>
+    
+    <h3>
+        <em>EU Users</em>
+    </h3>
+    <p>
+       If you are a resident of an EU nation and use our Services from within the EU, you acknowledge that any information that we collect and store, for the limited purposes outlined above in this Privacy Policy, will be collected and stored outside of the EU. For avoidance of confusion, references to “personal information” in this policy are equivalent to what is commonly referred to as “personal data” in the EU. 
+    </p>
+    <p>
+        <em>What are your data protection rights?</em>
+    </p>
+    <ul>
+        <li>
+            <strong>The right to access</strong>
+            . You have the right to request copies of your personal data and we may charge a fee for this service.
+        </li>
+        <li>
+            <strong>The right to rectification</strong>
+            . You have the right to request correction of information you believe is inaccurate or to complete information you believe is incomplete.
+        </li>
+        <li>
+            <strong>The right to erasure</strong>
+           . You have the right to request deletion of your personal data, under certain conditions.
+        </li>
+        <li>
+            <strong>The right to restrict processing</strong>
+            . You have the right to request the restriction of processing your personal data, under certain conditions.  
+        </li>
+        <li>
+            <strong>The right to object to processing</strong>
+            . You have the right to object to the processing your personal data, under certain conditions.
+        </li>
+        <li>
+            <strong>The right to data portability</strong>
+            . You have the right to request the transfer the data that we have collected to another organization or you, under certain conditions.
+        </li>
+    </ul>
+    <p>
+        If you would like to exercise any of these rights please contact us.
+    </p>
+    <h3>
+        <em>Brazilian Users</em>
+    </h3>
+    <p>
+        <strong>
+            The personal information collected, stored, used and/or processed by Us, as described in this privacy policy, are collected, stored, used and/or processed in accordance with Brazilian Law No. 12,965/2014. By clicking “I Agree” or any other button indicating your acceptance of this privacy policy, you expressly consent to the collection, use, storage and processing of your personal information by Us as described.
+        </strong>
+    </p>
+    <p>
+        By clicking “I Accept,” you consent to the collection, use, disclosure, and processing of your personal information in the manner described in this Privacy Policy, including our procedures related to cookies and IP addresses. We store data about or from you in the US. You understand that the US does not have the same level of protection for personal information that exists in other countries. Your consent is voluntary, and you may revoke your consent by opting out at any time. If you choose to opt-out, we can no longer provide you with the Services. If you have enabled cookies on your web browser, you consent to our use of cookies as described in this Privacy Policy.
+    </p>
+    <h3>
+        Security
+    </h3>
+    <p>
+        To prevent unauthorized access, safeguard data accuracy, and maintain the appropriate use of information, we have put in place appropriate physical, technical, and administrative procedures to protect the personal information data you submit. We make every effort to ensure the integrity and security of our network and systems. However, since the Internet is not 100% secure and as new technology evolves and emerges, we cannot guarantee that our security measures will prevent third-party interferences from illegally obtaining or tampering with your personal information.
+    </p>
+    <p>
+       We encourage you to help us by also taking precautions to protect your personal data when you use the Services. Change your Account password often, using a combination of letters, numbers, and characters, and make sure you use a secure connection.
+
+    </p>
+    <h3>
+        Privacy of Minors
+    </h3>
+    <p>
+       We do not promote or offer the Services for use by anyone under the age of 13 (“minors”). Wedo not knowingly solicit or collect personal information from minors, and we will not knowingly link to any third-party website or App, or host any of your Sites that solicit or collect personal information from minors. If you believe that a minor has disclosed personal information to us or that we have linked to such a third-party or user website or App, please contact us at <a href="mailto:support@station99ai.com">support@station99ai.com</a>
+    </p>
+    <h3>
+        Business Transfers
+    </h3>
+    <p>
+        If Our ownership substantially changes, such that all of its assets were acquired, or merged into another entity, or in the unlikely event that Weenter bankruptcy, you understand that any stored personally identifying, and non-personally identifying information and datawill likely be one of the assets that is transferred or acquired by a third party. You acknowledge that such transfers may occur, and that any acquirer or Our merging entity may continue to use your personal information as set forth in this policy.
+    </p>
+    <h3>
+        Privacy Policy Changes
+    </h3>
+    <p>
+        We may change or modify this Privacy Policy from time to time, in our sole discretion. We encourageyou to frequently check this page for any changes to our Privacy Policy.
+    </p>
+
+</div>
+</body>
+</html> 

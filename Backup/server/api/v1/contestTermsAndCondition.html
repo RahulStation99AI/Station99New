@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Terms & Condition</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script type="text/javascript">
+var url_string = window.location.href;
+var url = new URL(url_string);
+//var radio_station_id = url.searchParams.get("radioStationId");
+var dbName = url.searchParams.get("db_name");
+var tcId = url.searchParams.get("tc_id");
+console.log(dbName);
+console.log(tcId);
+    $(function(){	
+        var domaiURL = '/api/v1/contest/getContestTermsAndCondition';		    
+        $.ajax({
+            type: 'GET',
+            headers: {
+            //    'Authorization': 'Basic ' + btoa('myuser:mypswd'),
+                'db_name': dbName
+            },
+            data: {'tcId':tcId},
+            dataType: "json",
+            contentType: 'application/json',
+            url: domaiURL,						
+            success: function(data) {
+                
+                $('#responseData').html(data.response.terms_content);
+            }
+        });				
+    });
+</script>
+</head>
+<body>
+<div id="responseData" style="padding: 60px;text-align: justify;font-size: 19px;">
+
+</div>
+</body>
+</html>
